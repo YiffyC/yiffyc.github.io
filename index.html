@@ -156,7 +156,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <div class="w3-twothird">
       <h1>Lorem Ipsum</h1>
       <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
-
+      <div id="github-issues"></div>
       <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
         laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -191,6 +191,42 @@ function myFunction() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+</script>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    var urlToGetAllOpenBugs = "https://api.github.com/repos/leeenglestone/codereviewchecklist/issues?state=open";
+
+
+    $(document).ready(function () {
+        $.getJSON(urlToGetAllOpenBugs, function (allIssues) {
+            $("div#github-issues").append("There are " + allIssues.length + " outstanding issues:</br>");
+            $.each(allIssues, function (i, issue) {
+
+
+                // Get assignee (if applicable)
+                var assigneeName = "Unassigned";
+                if (issue.assignee) {
+                    assigneeName = issue.assignee.login;
+                }
+
+
+                // Calculate number of days ago created
+                var today = new Date();
+                var timeDifference = today - Date.parse(issue.created_at);
+                var daysAgo = (timeDifference / (1000 * 3600 * 24)).toFixed();
+
+
+                $("div#github-issues")
+                    .append("<div style=\"margin-bottom:20px;\">")
+                    .append("<strong><a href=\"" + issue.html_url + "\">" + issue.title + "</a></strong></br>")
+                    .append("#" + issue.number + " opened " + daysAgo + " days ago by " + issue.user.login + "</br>")
+                    .append("Assigned to: " + assigneeName)
+                    .append("</div>");
+            });
+        });
+    });
 </script>
 
 </body>
