@@ -94,6 +94,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
 }
 
+
+.grad {
+	text-transform: uppercase;
+	background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font: {
+		size: 20vw;
+		family: $font;
+	};
+
 </style>
 </head>
 <body>
@@ -220,7 +231,7 @@ function myFunction() {
 
                 $("div#github-issues")
                     .append("<div style=\"margin-bottom:20px;\">")
-                    .append("<strong><a href=\"" + issue.html_url + "\">" + issue.title + "</a></strong></br>")
+                    .append("<strong><a class='grad' href=\"" + issue.html_url + "\">" + issue.title + "</a></strong></br>")
                     .append("#" + issue.number + " opened " + daysAgo + " days ago by " + issue.user.login + "</br>")
                     .append("Assigned to: " + assigneeName)
                     .append("</div>");
