@@ -108,6 +108,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 	};
 
 </style>
+
+
+
 <!-- cal heatmap -->
 <script src="https://d3js.org/d3.v7.min.js"></script>
 
@@ -216,19 +219,45 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   </div>
 </div>
 
+
+
+
+
 <!-- 4rd Grid -->
+<!-- 3rd Grid -->
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-third w3-center">
 
     </div>
 
-    <div class="w3-twothird">
-      <h1 class = 'grad'>Les stats 2</h1>
-      <h5 class="w3-padding-32"></h5>
+    <div class="w3-twothird" height="10000px">
+      <h1 class = 'grad'>Les stats</h1>
 
+      <!-- google chart -->
+        <div id="container" style="height: 1000px; width: 100%"></div>
+        
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/extension/bmap.min.js"></script>
+  -->
 
-        <canvas id="heatmap" width="800" height="400"></canvas>
+  <script type="text/javascript" src="js/apachecal.js">  </script>
 
 
     </div>
@@ -236,23 +265,28 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </div>
 
 
-<!--
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>L'agenda</h1>
-        <iframe width="500" height="200" frameborder="0" scrolling="no" src="http://ycpk.sharepoint.com/:x:/s/LEDODO/EQTqVjpqrtlAqy0Py2M-yuMBhmFLVUasG-ooQxHz4MrVtA?e=aqp5KW">
-    </div>
-  </div>
-</div>
--->
 
-<!--
-=======
->>>>>>> parent of 0a0b1ab (Update index.html)
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">
