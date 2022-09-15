@@ -956,8 +956,8 @@
             range: '2021'
         }, {
             left: 520,
-            cellSize: [20, 'auto'],
-            bottom: 10,
+            //cellSize: [20, 'auto'],
+            //bottom: 10,
             orient: 'vertical',
             range: '2022',
             dayLabel: {
