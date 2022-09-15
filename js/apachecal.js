@@ -1056,8 +1056,7 @@
 
 
 
-alert (screen.width);
-
+// on triche pour rendre le site responsive
 
     if (option && typeof option === 'object' && screen.width < 500 ) {
         myChart.setOption(option);
