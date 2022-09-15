@@ -5,7 +5,8 @@
     });
     var app = {};
 
-    var option;
+    var option; //mobile
+    var option2; //autre
 
     function getVirtulData(year) {
         const y = year;
@@ -951,13 +952,14 @@
             orient: 'vertical',
             range: '2020'
         }, {
-            left: 300,
+            //left: 300,
+            top:1200,
             orient: 'vertical',
             range: '2021'
         }, {
-            left: 520,
+            //left: 520,
             //cellSize: [20, 'auto'],
-            //bottom: 10,
+            top: 2400,
             orient: 'vertical',
             range: '2022',
             dayLabel: {
@@ -982,8 +984,87 @@
         }]
     };
 
-    if (option && typeof option === 'object') {
+
+
+
+
+
+
+
+
+
+
+
+
+
+    option2 = {
+        tooltip: {
+            position: 'top',
+            formatter: function(p) {
+                var format = echarts.format.formatTime('yyyy-MM-dd', p.data[0]);
+                return format + ': ' + p.data[1];
+            }
+        },
+        visualMap: {
+            min: 1.25,
+            max: 11.25,
+            calculable: true,
+            orient: 'vertical',
+            left: '650',
+            top: 'center'
+        },/*
+        color:
+        {
+            ['#FF6767', '#EC5790', '#C15BB2', '#7E65C5', '#006CC2', '#006BAB', '#004E72', '#798897', '#888888']
+        },*/
+        calendar: [{
+            orient: 'vertical',
+            range: '2020'
+        }, {
+            left: 300,
+            //top:1200,
+            orient: 'vertical',
+            range: '2021'
+        }, {
+            left: 520,
+            //cellSize: [20, 'auto'],
+            //top: 2400,
+            orient: 'vertical',
+            range: '2022',
+            dayLabel: {
+                margin: 5
+            }
+        }],
+        series: [{
+            type: 'heatmap',
+            coordinateSystem: 'calendar',
+            calendarIndex: 0,
+            data: getVirtulData('2020')
+        }, {
+            type: 'heatmap',
+            coordinateSystem: 'calendar',
+            calendarIndex: 1,
+            data: getVirtulData('2021')
+        }, {
+            type: 'heatmap',
+            coordinateSystem: 'calendar',
+            calendarIndex: 2,
+            data: getVirtulData('2022')
+        }]
+    };
+
+
+
+
+alert (screen.width);
+
+
+    if (option && typeof option === 'object' && screen.width < 500 ) {
         myChart.setOption(option);
+    }
+    else if (option && typeof option === 'object')
+    {
+        myChart.setOption(option2);
     }
 
     window.addEventListener('resize', myChart.resize);
