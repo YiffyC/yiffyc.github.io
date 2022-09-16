@@ -3,7 +3,7 @@ const minScreenWidth = 700;
 
  if (screen.width < minScreenWidth ) {
         document.getElementById("container").style.height="3500px";
-        var c = screen.width/5; //on centre comme un connard
+        var c = screen.width/7; //on centre comme un connard
         var s = c+"px"
         document.getElementById("container").style.left = s;
     }
