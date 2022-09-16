@@ -4,135 +4,30 @@
 <title>Agenda du someil</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./css/dist/charts.min.css">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="manifest" href="manifest.json">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-anchor,.fa-coffee {font-size:200px}
-.bn632-hover {
-  width: 160px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  margin: 20px;
-  height: 55px;
-  text-align:center;
-  border: none;
-  background-size: 300% 100%;
-  border-radius: 50px;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
+<link rel="stylesheet" href="css/2.css">
 
-.bn632-hover:hover {
-  background-position: 100% 0;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
-
-.bn632-hover:focus {
-  outline: none;
-}
-
-.bn632-hover.bn18 {
-  background-image: linear-gradient(
-    to right,
-    #25aae1,
-    #40e495,
-    #30dd8a,
-    #2bb673
-  );
-  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
-}
-
-.bn632-hover {
-  width: 160px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  margin: 20px;
-  height: 55px;
-  text-align:center;
-  border: none;
-  background-size: 300% 100%;
-  border-radius: 50px;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
-
-.bn632-hover:hover {
-  background-position: 100% 0;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
-
-.bn632-hover:focus {
-  outline: none;
-}
-
-.bn632-hover.bn20 {
-  background-image: linear-gradient(
-    to right,
-    #667eea,
-    #764ba2,
-    #6b8dd6,
-    #8e37d7
-  );
-  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-}
-
-.grad {
-	text-transform: uppercase;
-	background: linear-gradient(to right, #0064ff, #00a0ff, #00c6eb, #00df87, #a8eb12);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	font: {
-		size: 20vw;
-		family: $font;
-	};
-
-</style>
-
-
-
-<!-- cal heatmap -->
-<script src="https://d3js.org/d3.v7.min.js"></script>
-
-
-
+<!-- includes nécessaires -->
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="js/github_contribution.js"></script>
 <link href="css/github_contribution_graph.css" media="all" rel="stylesheet" />
+
 <!-- GOOGLE charts -->
-
-
-
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="script/myCalendarGoogleChart.js"></script>
-
-
 </head>
+
+
 <body>
-
-
-
 <!-- 
 <div class="w3-top">
   <div class="w3-bar w3-gray w3-card w3-left-align w3-large">
@@ -156,8 +51,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 -->
 
 <!-- Header -->
-<header class="w3-container w3-gray w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo">L'agenda du sommeil</h1>
+<header class="w3-container w3-flat-midnight-blue w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo"><b class="grad">L'agenda du sommeil</b></h1>
   <!--<p class="w3-xlarge">Template by w3.css</p>-->
   <!--
   <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>
@@ -194,16 +89,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
       <h1 class = 'grad'>Les issues</h1>
       <h5 class="w3-padding-32">La liste des issues en cours.</h5>
       <div id="github-issues"></div>
-      <!--
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
-        -->
     </div>
   </div>
 </div>
 
-<!-- 3rd Grid google-->
+<!-- Google cal google-->
 <!--
 <div class="w3-row-padding w3-light-grey  w3-container">
   <div class="w3-content">
@@ -232,32 +122,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <div class="w3-row-padding w3-light-white  w3-container">
   <div class="w3-content">
 
-    <div class="w3-row" >
+    <div class="w3-center" >
       <h1 class = 'grad'>Les stats</h1>
 
-
-        <!-- <div id="container" style="height: 6000px; width: 100%" class="resp"></div> -->
         <div id="container" class="resp"></div>
         
     <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
-  <!-- Uncomment this line if you want to dataTool extension
-  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/extension/dataTool.min.js"></script>
-  -->
-  <!-- Uncomment this line if you want to use gl extension
-  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
-  -->
-  <!-- Uncomment this line if you want to echarts-stat extension
-  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
-  -->
-  <!-- Uncomment this line if you want to use map
-  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
-  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
-  -->
-  <!-- Uncomment these two lines if you want to use bmap extension
-  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
-  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/extension/bmap.min.js"></script>
-  -->
 
+  <!-- <script type="text/javascript" src="js/themes/roma.js"></script> -->
+  <script type="text/javascript" src="js/themes/halloween.js"></script>
   <script type="text/javascript" src="js/apachecal.js">  </script>
     </div>
   </div>
