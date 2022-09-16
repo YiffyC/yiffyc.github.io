@@ -1,3 +1,22 @@
+const minScreenWidth = 700;
+/* la taille de la balise*/
+
+ if (screen.width < minScreenWidth ) {
+        document.getElementById("container").style.height="3500px";
+        var c = screen.width/5; //on centre comme un connard
+        var s = c+"px"
+        document.getElementById("container").style.left = s;
+    }
+    else
+    {
+        document.getElementById("container").style.height="1200px";
+        
+    }
+
+
+    /* le calendrier */
+
+
     var dom = document.getElementById('container');
     var myChart = echarts.init(dom, null, {
         renderer: 'svg',
@@ -1057,13 +1076,16 @@
 
 
 // on triche pour rendre le site responsive
+let element 
 
-    if (option && typeof option === 'object' && screen.width < 500 ) {
+    if (option && typeof option === 'object' && screen.width < minScreenWidth ) 
+    {
         myChart.setOption(option);
     }
     else if (option && typeof option === 'object')
     {
         myChart.setOption(option2);
+        
     }
 
     window.addEventListener('resize', myChart.resize);
