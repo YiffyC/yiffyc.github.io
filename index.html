@@ -87,7 +87,6 @@
 
     <div class="w3-center">
       <h1 class = 'grad'>Les issues</h1>
-      <h5 class="w3-padding-32">La liste des issues en cours.</h5>
       <div id="github-issues"></div>
     </div>
   </div>
@@ -195,12 +194,12 @@ function myFunction() {
 
     $(document).ready(function () {
         $.getJSON(urlToGetAllOpenBugs, function (allIssues) {
-            $("div#github-issues").append("There are " + allIssues.length + " outstanding issues:</br>");
+            $("div#github-issues").append("<h5>Il y a  " + allIssues.length + "  issues en cours actuellement:</h5></br>");
             $.each(allIssues, function (i, issue) {
 
 
                 // Get assignee (if applicable)
-                var assigneeName = "Unassigned";
+                var assigneeName = "YiffyC";
                 if (issue.assignee) {
                     assigneeName = issue.assignee.login;
                 }
@@ -215,8 +214,8 @@ function myFunction() {
                 $("div#github-issues")
                     .append("<div style=\"margin-bottom:20px;\">")
                     .append("<strong><a class='grad' href=\"" + issue.html_url + "\">" + issue.title + "</a></strong></br>")
-                    .append("#" + issue.number + " opened " + daysAgo + " days ago by " + issue.user.login + "</br>")
-                    .append("Assigned to: " + assigneeName)
+                    .append(" Ouvert il y a  " + daysAgo + " Jours, ")
+                    .append("assign&eacute; &agrave;: " + assigneeName)
                     .append("</div>");
             });
         });
