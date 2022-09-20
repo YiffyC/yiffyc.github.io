@@ -55,7 +55,7 @@ const minScreenWidth = 700;
 
 
     var dom = document.getElementById('container');
-    var myChart = echarts.init(dom, 'halloween', {
+    var myChart = echarts.init(dom, 'purple-passion', {
         renderer: 'svg',
         useDirtyRect: false
     });
@@ -1014,6 +1014,7 @@ const minScreenWidth = 700;
             top: 2400,
             orient: 'vertical',
             range: '2022',
+            
             dayLabel: {
                 margin: 5
             }
@@ -1064,11 +1065,7 @@ const minScreenWidth = 700;
             orient: 'vertical',
             left: '650',
             top: 'center'
-        },/*
-        color:
-        {
-            ['#FF6767', '#EC5790', '#C15BB2', '#7E65C5', '#006CC2', '#006BAB', '#004E72', '#798897', '#888888']
-        },*/
+        },
         calendar: [{
             orient: 'vertical',
             range: '2020'
