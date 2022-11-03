@@ -1075,7 +1075,6 @@ const minScreenWidth = 700;
 [echarts.format.formatTime('yyyy-MM-dd',(echarts.number.parseDate('2022-10-31'))),7.75],
 [echarts.format.formatTime('yyyy-MM-dd',(echarts.number.parseDate('2022-11-01'))),7],
 [echarts.format.formatTime('yyyy-MM-dd',(echarts.number.parseDate('2022-11-02'))),7],
-[echarts.format.formatTime('yyyy-MM-dd',(echarts.number.parseDate('2022-11-03'))),-1
 
 
 
