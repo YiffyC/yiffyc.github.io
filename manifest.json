@@ -1,5 +1,5 @@
 {
-   "display": "standalone"
+   "display": "standalone",
    "name" : "Agenda du Sommeil",
      "icons": [{
     "src": "images/logo.png",

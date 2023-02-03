@@ -26,6 +26,14 @@
 <script type="text/javascript" src="script/myCalendarGoogleChart.js"></script>
 </head>
 
+<!-- PWA -->
+<script type="text/javascript">
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js');
+  });
+}
+</script>
 
 <body>
 <!-- 
